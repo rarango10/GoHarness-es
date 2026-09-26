@@ -81,7 +81,7 @@ secciones **«Lote N aplicado»** del final cuentan qué se cambió y qué apare
 | L54 | Los hallazgos que le corresponden a otra feature no tienen dónde vivir | `resuelto` | Lote 12 · router, `close-feature` + plantilla, `implement-task`, `brainstorming`, `specify` |
 | L55 | Se precarga un skill entero, con su mandato, a agentes que solo necesitan su formato | `resuelto` | Lote 15 · skill `formato-de-tareas` + frontmatter de los agentes |
 | L56 | El ciclo va hacia adelante y no tiene camino de vuelta | `resuelto` | Lote 12 · router, regla en `CLAUDE.md` + plantilla, `specify`, `implement-task`, `close-feature`, `tasks-fanout` |
-| L57 | El contrato del ejemplo se queda atrás de la plantilla, y la guarda no lo ve | **`aplicado · falta la revisión`** | guarda de paridad + `harness-init` + `HARNESS.md` + `EMPEZAR-ACA.md`. La guarda queda en rojo hasta la revisión |
+| L57 | El contrato del ejemplo se queda atrás de la plantilla, y la guarda no lo ve | `resuelto` | guarda de paridad + `harness-init` + `HARNESS.md` + `EMPEZAR-ACA.md`; revisión del contrato en `78ee1d4`, publicado 0.5.1 |
 
 ### Lo que queda
 
@@ -96,12 +96,6 @@ se aplicaron y las secciones «Lote N aplicado» de más abajo para lo que apare
 **Evaluación de las abiertas (2026-09-26)** —qué se volvió harness y qué quedó afuera, con el
 porqué—: [`docs/2026-09-26-lotes-12-a-15/plan.md`](docs/2026-09-26-lotes-12-a-15/plan.md). Los lotes
 12 a 15 están aplicados.
-
-**Lo primero de la próxima sesión — [[L57]]:** `claude plugin update goharness@goharness`, sesión
-nueva, y «revisemos el contrato». `harness-init` 0.5.0 en modo revisión propone, de a uno y con el
-sí, los casilleros que le faltan al `CLAUDE.md` del ejemplo (auditor: `npm audit`; backlog:
-`docs/pendientes.md`) y las marcas de los que ya tiene. Con eso la guarda de paridad vuelve a verde,
-se commitea y se publica 0.5.1. Hasta entonces la guarda está en rojo **a propósito**.
 
 **Aplicado sin probar todavía:**
 
@@ -2438,7 +2432,7 @@ hallazgo.
 
 ---
 
-## L57 · El contrato del ejemplo se queda atrás de la plantilla, y la guarda no lo ve · `aplicado · falta la revisión`
+## L57 · El contrato del ejemplo se queda atrás de la plantilla, y la guarda no lo ve · `resuelto`
 
 **Qué pasó.** 2026-09-26, al cerrar los lotes 12 a 15. La plantilla del contrato
 (`CLAUDE.template.md`) sumó dos casilleros —**Auditor de dependencias** y **Backlog del
@@ -2478,7 +2472,10 @@ plugin, se lleva un contrato de ejemplo más viejo que el método que el mismo r
 - **`EMPEZAR-ACA.md`:** para quien replica, el `CLAUDE.md` de la raíz no se copia: el de su proyecto
   lo arma `harness-init` desde la plantilla.
 
-**Lo que falta:** la revisión misma, en la próxima sesión. Ver «Lo que queda».
+**La revisión (2026-09-26).** `harness-init` en modo revisión, de a un cambio con el sí, en `78ee1d4`:
+las cinco marcas, el casillero del auditor (`npm audit`), la higiene del paso 8 con el e2e, dos
+frases de estado pasadas a norma y la regla 1 sin nombre de archivo. La guarda quedó en verde y se
+publicó 0.5.1, verificada con una instalación real.
 
 **Lo que este caso no es.** No es un problema del proyecto consumidor: un proyecto nuevo nace de la
 plantilla actual, y uno viejo se pone al día con el modo revisión, que ahora sabe buscar casilleros
