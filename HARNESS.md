@@ -58,11 +58,11 @@ que va a ver otra persona:
 
 ```bash
 cd $(mktemp -d)
-claude plugin marketplace add rarango10/GoHarness --scope local
-claude plugin install goharness@goharness --scope local
+claude plugin marketplace add rarango10/GoHarness-es --scope local
+claude plugin install goharness-es@goharness-es --scope local
 claude plugin list --json          # 8 skills (7 de paso + 1 de referencia), 7 agentes, el workflow y el router
-claude plugin uninstall goharness@goharness --scope local
-claude plugin marketplace remove goharness --scope local   # solo si lo agregó esta prueba
+claude plugin uninstall goharness-es@goharness-es --scope local
+claude plugin marketplace remove goharness-es --scope local   # solo si lo agregó esta prueba
 ```
 
 **`check-rules-parity.cjs` cuida una duplicación que no se puede eliminar.** Las reglas del método
@@ -98,7 +98,7 @@ Está en el **índice de estado** al tope de [`lecciones.md`](lecciones.md). Los
 - **No edites el harness con una corrida del ciclo en vuelo.** Después no se puede distinguir qué
   causó qué.
 - **Dos plugins con el mismo nombre no conviven, y el que pierde se apaga en silencio.** Si instalás
-  `goharness` desde el marketplace teniendo la copia de desarrollo en `~/.claude/skills/goharness`,
+  `goharness-es` desde el marketplace teniendo la copia de desarrollo en `~/.claude/skills/goharness`,
   esta última queda desactivada y solo se ve en `claude plugin list`. Mientras editás, no la
   instales.
 - **Un cambio a `CLAUDE.template.md` no termina en el plugin.** El `CLAUDE.md` de la raíz es el
@@ -124,6 +124,6 @@ Está en el **índice de estado** al tope de [`lecciones.md`](lecciones.md). Los
    termine en la versión nueva. `claude plugin marketplace update` dice «actualizado» aunque no haya
    traído nada, así que su mensaje no prueba nada.
 
-Del otro lado se actualiza con `claude plugin update goharness@goharness`. Ojo con la prueba: `claude
+Del otro lado se actualiza con `claude plugin update goharness-es@goharness-es`. Ojo con la prueba: `claude
 plugin uninstall --scope local` hay que correrlo **desde la carpeta descartable**, porque el scope
 local es por proyecto, y el marketplace registrado de antes no se quita: no es de la prueba.

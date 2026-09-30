@@ -1,10 +1,16 @@
-# GoHarness
+# GoHarness (español, congelado)
+
+> **Esta versión quedó congelada en la 0.5.2.** La evolución sigue en
+> [rarango10/GoHarness](https://github.com/rarango10/GoHarness): en inglés, en un repo dedicado solo
+> al plugin, y también funciona en español. Este repo queda como **caso de estudio**: la calculadora
+> y su rastro documental muestran el método funcionando de punta a punta. El porqué de la mudanza
+> está en [`docs/2026-09-29-goharness-en-ingles/plan.md`](docs/2026-09-29-goharness-en-ingles/plan.md).
 
 Un **ciclo de desarrollo asistido por agentes** para Claude Code, empaquetado como plugin
 instalable — y una app chiquita construida enteramente con él, con todo su rastro documental a la
 vista.
 
-1. **El harness** (`goharness`): nueve pasos, siete skills de paso y uno de referencia, siete subagentes y un workflow dinámico.
+1. **El harness** (`goharness-es`): nueve pasos, siete skills de paso y uno de referencia, siete subagentes y un workflow dinámico.
    Cada paso produce un artefacto, se detiene y espera aprobación humana.
 2. **La calculadora de `src/`**: el ejemplo. No es el punto — es la prueba de que el método produce
    algo, y el lugar donde se puede leer cómo quedó cada documento del ciclo.
@@ -18,8 +24,8 @@ si venís a **editar el harness**, la puerta es [`EMPEZAR-ACA.md`](EMPEZAR-ACA.m
 ## Instalarlo
 
 ```bash
-claude plugin marketplace add rarango10/GoHarness
-claude plugin install goharness@goharness
+claude plugin marketplace add rarango10/GoHarness-es
+claude plugin install goharness-es@goharness-es
 ```
 
 Queda instalado para tu usuario, así que sirve en todos tus proyectos. Después:
@@ -33,12 +39,12 @@ Queda instalado para tu usuario, así que sirve en todos tus proyectos. Después
 3. **Arrancá la primera feature** con «quiero agregar X». Desde ahí, cada paso nombra el siguiente.
 
 **Pedí los pasos en lenguaje natural.** Adentro del plugin todo lleva prefijo —
-`goharness:implement-task`, `goharness:dod-checker`— y el nombre pelado solo resuelve si el skill
+`goharness-es:implement-task`, `goharness-es:dod-checker`— y el nombre pelado solo resuelve si el skill
 vive en tu repo. Las frases de la columna «Se pide diciendo» disparan cada skill por su descripción,
 y esas **no dependen del prefijo**.
 
-Para actualizar: `claude plugin marketplace update goharness`, después
-`claude plugin update goharness@goharness`, y reiniciá la sesión.
+Para actualizar: `claude plugin marketplace update goharness-es`, después
+`claude plugin update goharness-es@goharness-es`, y reiniciá la sesión.
 
 ---
 
@@ -285,7 +291,7 @@ este, con tu usuario en lugar de `rarango10`.
 **1. Cambiale el nombre.** En `plugin/goharness/.claude-plugin/plugin.json` (`name`), en el
 `name:` del router `SKILL.md`, y en `.claude-plugin/marketplace.json` (`name`, `owner` y la entrada
 de `plugins`). **No es cosmético:** dos plugins con el mismo nombre no conviven. Si instalás tu fork
-llamándose `goharness` teniendo este instalado, uno de los dos queda desactivado **en silencio**, y el
+llamándose `goharness-es` teniendo este instalado, uno de los dos queda desactivado **en silencio**, y el
 único lugar donde se ve es `claude plugin list`.
 
 **2. Validá los dos manifiestos.**
@@ -323,8 +329,8 @@ copia y una instalación con el mismo nombre no cargan juntas, y gana la instala
 
 ### El namespacing, que es lo que sorprende al empaquetar
 
-Adentro de un plugin **todo se renombra**: el workflow se registra como `goharness:tasks-fanout` y los
-subagentes como `goharness:spec-scout`. El nombre pelado deja de resolver, y eso rompe en dos lugares:
+Adentro de un plugin **todo se renombra**: el workflow se registra como `goharness-es:tasks-fanout` y los
+subagentes como `goharness-es:spec-scout`. El nombre pelado deja de resolver, y eso rompe en dos lugares:
 al lanzar el workflow —`planning-tasks` lee la lista de `Available:` del propio error y relanza— y
 adentro del script, en las cinco llamadas a subagentes, donde `tasks-fanout.js` descubre el prefijo
 del mensaje de error y lo cachea.

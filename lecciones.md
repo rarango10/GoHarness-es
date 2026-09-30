@@ -14,6 +14,12 @@ se conserva porque saber por qué era falsa evita volver a creerla).
 > a mitad de una corrida invalida el resultado: después no se puede distinguir qué causó qué. Los
 > arreglos `listo para aplicar` se juntan y se hacen todos al terminar el recorrido.
 
+> **Repo congelado desde el 2026-09-29 (0.5.2).** Las lecciones nuevas se escriben en
+> [rarango10/GoHarness](https://github.com/rarango10/GoHarness), en inglés. Las entradas de acá no
+> se traducen: el repo nuevo lleva un resumen de principios que enlaza a cada una, y las que siguen
+> en pie (L6, L8, L12, L29, L50, L53) viajan completas. Ver
+> [`docs/2026-09-29-goharness-en-ingles/plan.md`](docs/2026-09-29-goharness-en-ingles/plan.md).
+
 ---
 
 ## Índice de estado

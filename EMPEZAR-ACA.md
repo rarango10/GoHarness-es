@@ -15,7 +15,7 @@ De ahí salen dos modos de trabajo. **Averiguá en cuál estás antes de tocar n
 |---|---|---|
 | Qué querés | construir software con el harness | mejorar el harness |
 | Dónde trabajás | en **tu** proyecto, no en este repo | en este repo |
-| Cómo lo obtenés | `claude plugin install goharness@goharness` | clonás este repo |
+| Cómo lo obtenés | `claude plugin install goharness-es@goharness-es` | clonás este repo |
 | Qué leés | [`README.md`](README.md) | [`HARNESS.md`](HARNESS.md) |
 | Qué editás | tu código y tus `docs/` | `plugin/goharness/` y `lecciones.md` |
 | Qué **no** tocás | nada del plugin: se actualiza con `plugin update` | el ciclo del ejemplo a mano |
@@ -35,8 +35,8 @@ Dos preguntas, y con una alcanza:
 **Consumidor** — en tu proyecto, no acá:
 
 ```bash
-claude plugin marketplace add rarango10/GoHarness
-claude plugin install goharness@goharness
+claude plugin marketplace add rarango10/GoHarness-es
+claude plugin install goharness-es@goharness-es
 ```
 
 Después abrí una sesión en tu proyecto y pedí el paso 0: **«preparemos el proyecto»**. El resto lo
